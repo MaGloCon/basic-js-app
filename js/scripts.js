@@ -1,3 +1,4 @@
+let pokemonRepository = (function () {
 let pokemonList = [{
     name: 'Bulbasaur',
     height: 0.7,
@@ -15,21 +16,26 @@ let pokemonList = [{
 }
 ];
 
-/* Task 3
-for (let i=0; i<pokemonList.length; i++) {
-    document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ' m) ');
-    
-    if (pokemonList[i].height <= 1.0) {
-    document.write('<br>');
-    }
-    else{
-        document.write(T='- Wow, that\'s a big one!');
-        document.write('<br>');
+function add(pokemon) {
+    if (typeof pokemon === 'object') {
+        pokemonList.push(pokemon);
     }
 }
-*/
 
-//Task 4
+function getAll() {
+    return pokemonList;
+}
+
+return {
+    add: add,
+    getAll: getAll
+};
+}) ();
+
+// Add new Pokémon to the list
+    pokemonRepository.add(
+        {name: 'Arcanine', height: 1.9, type: ['fire']}
+    );
 
 // Print Pokémon name and corresponding height from pokemonList
 pokemonList.forEach (function (pokemon) {
