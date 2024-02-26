@@ -12,10 +12,10 @@ let pokemonList = [{
     name: 'Pikachu',
     height: 0.4,
     type: ['electric']
-},
+}
 ];
 
-// Task 3
+/* Task 3
 for (let i=0; i<pokemonList.length; i++) {
     document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ' m) ');
     
@@ -27,4 +27,19 @@ for (let i=0; i<pokemonList.length; i++) {
         document.write('<br>');
     }
 }
+*/
+
+//Task 4
+
+// Print Pokémon name and corresponding height from pokemonList
+pokemonList.forEach (function (pokemon) {
+    //print name and height with message if the height is more than to 1 m
+    //otherwise print only name and height 
+    if (pokemon.height > 1) {
+        document.write('<p>', pokemon.name + ' (height: ' + pokemon.height + ' m)' + ' - Wow, that\'s a big one! </p>');
+    } else {
+        document.write('<p>', pokemon.name + ' (height: ' + pokemon.height + ' m)' + ' </p> ');
+    }
+});
+
 
